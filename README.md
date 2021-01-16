@@ -26,7 +26,7 @@ EasyESP combined with the NodeMCU is a very easy way to connect sensors over WiF
 
 # Test Setup
 ![Setup](https://github.com/plando2act/WaterFlowMeter/blob/main/1.jpg)
-
+Note that the sensor is positioned off-center of the spinning indicator. Otherwise it does not create pulses but 'sees' the metal all the time.
 ![View](https://github.com/plando2act/WaterFlowMeter/blob/main/2.jpg)
 
 # PCB 
