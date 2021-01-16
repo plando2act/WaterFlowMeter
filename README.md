@@ -17,8 +17,8 @@ After a bit of tinkering this was the end result:
 ![Schematic](https://github.com/plando2act/WaterFlowMeter/blob/main/Schematic.PNG)
 Things to explain:
 - The Vin pin should be able to deal with 16 Volt.. but I've seen comments on it that it can break the board. That is why 2 Diodes were added to lower the voltage at Vin with 2 x 0.6 Volt
-- Using a general purpose BC550 worked well. Measurements on the voltages and testing with metal to create pulses gave the resistor values. Note that the sensor voltage 
-- By Using this sensor, it would not rely on reflection of Infra Red light but use the metal disk in the spinning meter. It indicates 1 liter used with one turn
+- Using a general purpose BC550 worked well. Measurements on the voltages and testing with metal to create pulses gave the resistor values. Note that the sensor voltage will destroy the NodeMCU input if higher than 3.3 Volt
+- By Using this sensor, it would not rely on reflection of Infra Red light but use the metal disk in the spinning meter. It indicates 1 liter used with one turn.
 ![Sensor](https://github.com/plando2act/WaterFlowMeter/blob/main/Proximity%20sensor.PNG)
 
 # Software
