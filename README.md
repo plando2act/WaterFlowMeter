@@ -23,6 +23,15 @@ Things to explain:
 
 # Software
 EasyESP combined with the NodeMCU is a very easy way to connect sensors over WiFi to your home automation.
+Details on the binaries is on this page: https://www.letscontrolit.com/wiki/index.php/ESPEasy
+A generic tour of the web interface on the flashed device is here: https://www.letscontrolit.com/wiki/index.php?title=ESP_Easy_web_interface
+Do not expose the web interface to the internet and look into the configuration of trusted segments in your LAN, meaning the device will only accept 'friendly' connections.
+
+To flash the EasyESP firmware, the NodeMCU firmwareflasher was used but setups work different for you.
+
+Like mentioned at the start of the article, Domoticz is used. The start of a successfull installation is the creation of a virtual sensor via the Domoticz hardware list. Us ethe 'incremental counter' type. Once created, modify the sensor and note the IDX number of the virtual sensor. This is needed later on in EasyESP software so the watermeter data can be posted to the right Domoticz sensor.
+<image to follow>
+
 
 # Test Setup
 ![Setup](https://github.com/plando2act/WaterFlowMeter/blob/main/1.jpg)
@@ -33,3 +42,4 @@ Note that the sensor is positioned off-center of the spinning indicator. Otherwi
 With EasyEDA a PCB was made. Never used it but in 2 hours including learning curve, the board was ordered.
 ![PCB](https://github.com/plando2act/WaterFlowMeter/blob/main/PCB.PNG)
 I did use KiCAD before but this was also really easy. The software knows a lot of components and footprints.
+(I later discovered that the solder pads are not large enough and the ground plate fill is giving problems.. learning by doing. Next version will be better)
