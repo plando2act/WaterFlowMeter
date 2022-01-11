@@ -23,14 +23,16 @@ Things to explain:
 
 # Software
 EasyESP combined with the NodeMCU is a very easy way to connect sensors over WiFi to your home automation.
-Details on the binaries is on this page: https://www.letscontrolit.com/wiki/index.php/ESPEasy
+Details on the binaries were (and may still be) on this page: https://www.letscontrolit.com/wiki/index.php/ESPEasy
+However an update page seems to be here: https://espeasy.readthedocs.io/en/latest/index.html
 A generic tour of the web interface on the flashed device is here: https://www.letscontrolit.com/wiki/index.php?title=ESP_Easy_web_interface
 Do not expose the web interface to the internet and look into the configuration of trusted segments in your LAN, meaning the device will only accept 'friendly' connections.
 
 To flash the EasyESP firmware, the NodeMCU firmwareflasher was used but setups work different for you.
+Current documentation seems to suggest other options for the ESP32 platform as well.
 
 Like mentioned at the start of the article, Domoticz is used. The start of a successfull installation is the creation of a virtual sensor via the Domoticz hardware list. Us ethe 'incremental counter' type. Once created, modify the sensor and note the IDX number of the virtual sensor. This is needed later on in EasyESP software so the watermeter data can be posted to the right Domoticz sensor.
-<image to follow>
+..image to follow..
 
 
 # Test Setup
