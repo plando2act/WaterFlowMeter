@@ -32,10 +32,15 @@ To flash the EasyESP firmware, the NodeMCU firmware flasher was used but setups 
 Current documentation seems to suggest other options for the ESP32 platform as well.
 
 Here are the settings and screenshots from the NodeMCU firmware flasher:
+The details of the version used:
 ![About](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware0.PNG)
+Start screen:
 ![Start](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware1.PNG)
+File selected to burn into the NodeMCU:
 ![Source](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware2.PNG)
+Settings for burning process.. important to follow the SPI mode and flash speed.. there are cases where the Wi-Fi on the NodeMCU would not start if done otherwise:
 ![Settings](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware3.PNG)
+Final screen anfter successfull write (data deleted in picutre):
 ![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware44.PNG)
 
 Like mentioned at the start of the article, Domoticz is used. The start of a successfull installation is the creation of a virtual sensor via the Domoticz hardware list. Us ethe 'incremental counter' type. Once created, modify the sensor and note the IDX number of the virtual sensor. This is needed later on in EasyESP software so the watermeter data can be posted to the right Domoticz sensor.
