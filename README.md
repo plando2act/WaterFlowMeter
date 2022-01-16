@@ -35,17 +35,16 @@ Here are the settings and screenshots from the NodeMCU firmware flasher:
 The details of the version used:
 ![About](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware0.PNG)
 
-Start screen:
-
+Start screen:  
 ![Start](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware1.PNG)
 
-File selected to burn into the NodeMCU:
+File selected to burn into the NodeMCU:  
 ![Source](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware2.PNG)
 
-Settings for burning process.. important to follow the SPI mode and flash speed.. there are cases where the Wi-Fi on the NodeMCU would not start if done otherwise:
+Settings for burning process.. important to follow the SPI mode and flash speed.. there are cases where the Wi-Fi on the NodeMCU would not start if done otherwise:  
 ![Settings](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware3.PNG)
 
-Final screen anfter successfull write (data deleted in picutre):
+Final screen anfter successfull write (data deleted in picutre):  
 ![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware44.PNG)
 
 After the programming is done, reset the power to the NodeMCU and: 
@@ -65,30 +64,30 @@ The start of a successfull installation is the creation of a virtual sensor via 
 For that to work a virtual device should be made first for the ESP-EASY sensor(s).
 ![Virtualdevice](https://github.com/plando2act/WaterFlowMeter/blob/main/Domoticz1.PNG)
 
-Then create the virtual sensor and be sure to use an incremental counter:
+Then create the virtual sensor and be sure to use an incremental counter:  
 ![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/Domoticz2.PNG)
 
-Once created, click modify to set the parameters correctly and to offsett the measured value. The sensor will start at 0 but your real-world water meter probably has another value on the counter. This is the place to align/ offset the counter so they are in sync. Also, note down the IDX number of the virtual sensor. This is needed in ESP_Easy software so the watermeter data can be posted to the right Domoticz sensor.
+Once created, click modify to set the parameters correctly and to offsett the measured value. The sensor will start at 0 but your real-world water meter probably has another value on the counter. This is the place to align/ offset the counter so they are in sync. Also, note down the IDX number of the virtual sensor. This is needed in ESP_Easy software so the watermeter data can be posted to the right Domoticz sensor.  
 ![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/Domoticz4.PNG)
 
 
 # Software connection between EasyESP and the sensor
-Go back into the web Interface of the EasyESP to finalize the setup of the sensor. We need to tell the device where to post the data and the sensor must be configured to the correct input of the NodeMCU. When logging on, this should be a similar view in the 'Main'tab:
+Go back into the web Interface of the EasyESP to finalize the setup of the sensor. We need to tell the device where to post the data and the sensor must be configured to the correct input of the NodeMCU. When logging on, this should be a similar view in the 'Main' tab:  
 ![Main](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy00.PNG)
 
-Step into the 'Controller' tab to set the ip address of the Domoticz instance in your LAN. Check the controller port since it may vary. 8080 is the standard Domoticz port number but it can be changed if your site requires that. Note that the protocol has a nice drop-down selector so no typing errors here.
+Step into the 'Controller' tab to set the ip address of the Domoticz instance in your LAN. Check the controller port since it may vary. 8080 is the standard Domoticz port number but it can be changed if your site requires that. Note that the protocol has a nice drop-down selector so no typing errors here.  
 ![Controller](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy0.PNG)
 
-Set the D5 port (=GPIO-14) as input:
+Set the D5 port (=GPIO-14) as input:  
 ![Hardware](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy1.PNG)
 
-And set these to have the correct LED functionality:
+And set these to have the correct LED functionality:  
 ![LED](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy11.PNG)
 
-Almost there.. time to add the Sensor as device. Select the generic device 'pulse counter':
+Almost there.. time to add the Sensor as device. Select the generic device 'pulse counter':  
 ![Device](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy2.PNG)
 
-After creation you can edit the hardware:
+After creation you can edit the hardware:  
 ![DeviceHardware](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy21.PNG)
 
 In the next screen the IDX and characteristics like 'Rising' edge counter can be set. Do take notice of the debounce time, this value works fine for the setup here and there was not a liter miscounted during the runtime that it has had.
@@ -98,11 +97,11 @@ Done!
 
 # Test Setup
 ![Setup](https://github.com/plando2act/WaterFlowMeter/blob/main/1.jpg)
-Note that the sensor is positioned off-center of the spinning indicator. Otherwise it does not create pulses but 'sees' the metal all the time.
+Note that the sensor is positioned off-center of the spinning indicator. Otherwise it does not create pulses but 'sees' the metal all the time.  
 ![View](https://github.com/plando2act/WaterFlowMeter/blob/main/2.jpg)
 
 # PCB 
-With EasyEDA a PCB was made. Never used it but in 2 hours including learning curve, the board was ordered.
+With EasyEDA a PCB was made. Never used it but in 2 hours including learning curve, the board was ordered.  
 ![PCB](https://github.com/plando2act/WaterFlowMeter/blob/main/PCB.PNG)
 I did use KiCAD before but this was also really easy. The software knows a lot of components and footprints.
 (I later discovered that the solder pads are not large enough and the ground plate fill is giving problems.. learning by doing. Next version will be better)
