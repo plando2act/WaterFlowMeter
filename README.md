@@ -36,6 +36,7 @@ The details of the version used:
 ![About](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware0.PNG)
 
 Start screen:
+
 ![Start](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware1.PNG)
 
 File selected to burn into the NodeMCU:
@@ -71,10 +72,10 @@ Once created, click modify to set the parameters correctly and to offsett the me
 
 
 # Software connection between EasyESP and the sensor
-Go back into the web Interface of the EasyESP to finalize the setup of the sensor. We need to tell the device where to post the data and the sensor must be configured to the correct input of the NodeMCU. Whenn logging on, this should be a similar view in the 'Main'tab:
+Go back into the web Interface of the EasyESP to finalize the setup of the sensor. We need to tell the device where to post the data and the sensor must be configured to the correct input of the NodeMCU. When logging on, this should be a similar view in the 'Main'tab:
 ![Main](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy00.PNG)
 
-Step into the 'Controller' tab to set the ip address of the Domoticz instance in your LAN. Check the controller port since it may vary. 8080 is the standard port number but it can be changed if your site requires that. Note that the protocol has a nice drop-down selector so no typing errors here.
+Step into the 'Controller' tab to set the ip address of the Domoticz instance in your LAN. Check the controller port since it may vary. 8080 is the standard Domoticz port number but it can be changed if your site requires that. Note that the protocol has a nice drop-down selector so no typing errors here.
 ![Controller](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy0.PNG)
 
 Now it is time to set the D5 port (=GPIO-14) as input:
@@ -88,7 +89,7 @@ Almost there.. time to add the Sensor as device. Select the generic device 'puls
 After creation you can edit the hardware:
 ![Sensor](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy21.PNG)
 
-In the next screen the IDX and characteristics like 'Rising' edge counter can be set. Do take notice of the debounce time, this value works fine for the setup here and there was not a liter miscounted during the runtime that it has had
+In the next screen the IDX and characteristics like 'Rising' edge counter can be set. Do take notice of the debounce time, this value works fine for the setup here and there was not a liter miscounted during the runtime that it has had.
 ![Sensor](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy22.PNG)
 
 Done!
