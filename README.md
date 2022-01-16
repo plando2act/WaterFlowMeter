@@ -49,12 +49,13 @@ Final screen anfter successfull write (data deleted in picutre):
 ![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware44.PNG)
 
 After the programming is done, reset the power to the NodeMCU and: 
-- search for ESP_Easy_0
+- search for an ESP_Easy_0 Wi-Fi network. The NodeMCU will create that network and it awaits to be configured via a browser.
+- Password is 'configesp' to get connected
 - Browse to 192.168.4.1  (may work different per browser Safari and Chrome worked, also iPad and Android phones were successfull)
-- the wizzard will start, try setting the credentials for your local Wi-Fi. Once done, reset the device. It will try and connect to your Wi-Fi
-- After reset it will appear on network if all works fine ( it needs a reset to restart the Webserver interface)
+- the wizzard will start, only set the credentials for your local Wi-Fi. Once done, reset the device. It will try and connect to your Home Wi-Fi
+- After reset it will appear on network if all works fine (it needs that reset to restart the Webserver interface)
 
-If you reached this point, then it is time to start Setting up Domoticz because we need to get a device number for the Waterflow sensor first.
+If you reached this point, then it is time to start setting up Domoticz because we need to get a device number for the Waterflow sensor first.
 
 # Software in Domoticz
 Like mentioned at the start of the article, Domoticz is used. Eventually it will look like this:
@@ -78,19 +79,20 @@ Go back into the web Interface of the EasyESP to finalize the setup of the senso
 Step into the 'Controller' tab to set the ip address of the Domoticz instance in your LAN. Check the controller port since it may vary. 8080 is the standard Domoticz port number but it can be changed if your site requires that. Note that the protocol has a nice drop-down selector so no typing errors here.
 ![Controller](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy0.PNG)
 
-Now it is time to set the D5 port (=GPIO-14) as input:
+Set the D5 port (=GPIO-14) as input:
 ![Hardware](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy1.PNG)
+
 And set these to have the correct LED functionality:
-![Hardware](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy11.PNG)
+![LED](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy11.PNG)
 
 Almost there.. time to add the Sensor as device. Select the generic device 'pulse counter':
-![Sensor](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy2.PNG)
+![Device](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy2.PNG)
 
 After creation you can edit the hardware:
-![Sensor](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy21.PNG)
+![DeviceHardware](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy21.PNG)
 
 In the next screen the IDX and characteristics like 'Rising' edge counter can be set. Do take notice of the debounce time, this value works fine for the setup here and there was not a liter miscounted during the runtime that it has had.
-![Sensor](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy22.PNG)
+![SpecificsSensor](https://github.com/plando2act/WaterFlowMeter/blob/main/ESPEasy22.PNG)
 
 Done!
 
