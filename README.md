@@ -21,18 +21,37 @@ Things to explain:
 - By Using this sensor, it would not rely on reflection of Infra Red light but use the metal disk in the spinning meter. It indicates 1 liter used with one turn.
 ![Sensor](https://github.com/plando2act/WaterFlowMeter/blob/main/Proximity%20sensor.PNG)
 
-# Software
+# Software EasyESP in NodeMCU
 EasyESP combined with the NodeMCU is a very easy way to connect sensors over WiFi to your home automation.
 Details on the binaries were (and may still be) on this page: https://www.letscontrolit.com/wiki/index.php/ESPEasy
 However an update page seems to be here: https://espeasy.readthedocs.io/en/latest/index.html
 A generic tour of the web interface on the flashed device is here: https://www.letscontrolit.com/wiki/index.php?title=ESP_Easy_web_interface
 Do not expose the web interface to the internet and look into the configuration of trusted segments in your LAN, meaning the device will only accept 'friendly' connections.
 
-To flash the EasyESP firmware, the NodeMCU firmwareflasher was used but setups work different for you.
+To flash the EasyESP firmware, the NodeMCU firmware flasher was used but setups work different for you.
 Current documentation seems to suggest other options for the ESP32 platform as well.
+
+Here are the settings and screenshots from the NodeMCU firmware flasher:
+![About](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware0.PNG)
+![Start](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware1.PNG)
+![Source](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware2.PNG)
+![Settings](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware3.PNG)
+![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware44.PNG)
 
 Like mentioned at the start of the article, Domoticz is used. The start of a successfull installation is the creation of a virtual sensor via the Domoticz hardware list. Us ethe 'incremental counter' type. Once created, modify the sensor and note the IDX number of the virtual sensor. This is needed later on in EasyESP software so the watermeter data can be posted to the right Domoticz sensor.
 ..image to follow..
+
+
+After the programming is done, reset the power to the NodeMCU and: 
+ - search for ESP_Easy_0
+ - Browse to 192.168.4.1  (may work different per browser Safari and Chrome worked, also iPad and Android phones were successfull)
+- the wizzard will start, try setting the credentials for your local Wi-Fi. Once done, reset the device. It will try and connect to your Wi-Fi
+- After reset it will appear on network if all works fine ( it needs a reset to restart the Webserver interface) 
+If you reached this point, then it is time to start Setting up EasyESP.
+
+# Software connection between EasyESP and the sensor
+
+# Software in Domoticz
 
 
 # Test Setup
