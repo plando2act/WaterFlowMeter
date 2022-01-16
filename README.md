@@ -34,29 +34,44 @@ Current documentation seems to suggest other options for the ESP32 platform as w
 Here are the settings and screenshots from the NodeMCU firmware flasher:
 The details of the version used:
 ![About](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware0.PNG)
+
 Start screen:
 ![Start](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware1.PNG)
+
 File selected to burn into the NodeMCU:
 ![Source](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware2.PNG)
+
 Settings for burning process.. important to follow the SPI mode and flash speed.. there are cases where the Wi-Fi on the NodeMCU would not start if done otherwise:
 ![Settings](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware3.PNG)
+
 Final screen anfter successfull write (data deleted in picutre):
 ![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/NodeMCUFirmware44.PNG)
 
-Like mentioned at the start of the article, Domoticz is used. The start of a successfull installation is the creation of a virtual sensor via the Domoticz hardware list. Us ethe 'incremental counter' type. Once created, modify the sensor and note the IDX number of the virtual sensor. This is needed later on in EasyESP software so the watermeter data can be posted to the right Domoticz sensor.
-..image to follow..
-
-
 After the programming is done, reset the power to the NodeMCU and: 
- - search for ESP_Easy_0
- - Browse to 192.168.4.1  (may work different per browser Safari and Chrome worked, also iPad and Android phones were successfull)
+- search for ESP_Easy_0
+- Browse to 192.168.4.1  (may work different per browser Safari and Chrome worked, also iPad and Android phones were successfull)
 - the wizzard will start, try setting the credentials for your local Wi-Fi. Once done, reset the device. It will try and connect to your Wi-Fi
-- After reset it will appear on network if all works fine ( it needs a reset to restart the Webserver interface) 
-If you reached this point, then it is time to start Setting up EasyESP.
+- After reset it will appear on network if all works fine ( it needs a reset to restart the Webserver interface)
+
+If you reached this point, then it is time to start Setting up Domoticz because we need to get a device number for the Waterflow sensor first.
+
+# Software in Domoticz
+Like mentioned at the start of the article, Domoticz is used. Eventually it will look like this:
+![Result](https://github.com/plando2act/WaterFlowMeter/blob/main/Domoticz0.PNG)
+
+The start of a successfull installation is the creation of a virtual sensor via the Domoticz hardware list. 
+For that to work a virtual device should be made first for the ESP-EASY sensor(s).
+![Virtualdevice](https://github.com/plando2act/WaterFlowMeter/blob/main/Domoticz1.PNG)
+
+Then create the virtual sensor and be sure to use an incremental counter:
+![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/Domoticz2.PNG)
+
+Once created, click modify to set the parameters correctly and to offsett the measured value. The sensor will start at 0 but your real-world water meter probably has another value on the counter. This is the place to align/ offset the counter so they are in sync. Also, note down the IDX number of the virtual sensor. This is needed in ESP_Easy software so the watermeter data can be posted to the right Domoticz sensor.
+![Done](https://github.com/plando2act/WaterFlowMeter/blob/main/Domoticz4.PNG)
+
 
 # Software connection between EasyESP and the sensor
 
-# Software in Domoticz
 
 
 # Test Setup
